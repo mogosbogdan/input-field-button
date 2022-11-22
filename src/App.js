@@ -7,7 +7,7 @@ function App() {
     setActive(!active);
   };
 
-  const [fName = "Gabriel", setfName] = useState("");
+  const [fName, setfName] = useState("");
 
   return (
     <>
