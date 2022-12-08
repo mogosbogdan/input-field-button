@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <form onSubmit={handleSubmit}>
         <label>
-          Enter a value:
+          Enter a name:
           <input type="text" value={value} onChange={handleChange} />
         </label>
       </form>
