@@ -1,7 +1,7 @@
 {
-  "name": "gabrielv",
+  "name": "input-field-button",
   "version": "0.1.0",
-  "homepage": "https://mogosbogdan.github.io/gabrielv",
+  "homepage": "https://mogosbogdan.github.io/input-field-button",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
