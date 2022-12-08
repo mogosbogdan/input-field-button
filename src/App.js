@@ -1,41 +1,53 @@
-import { useState } from "react";
 import "./App.css";
+import React, { useState } from 'react';
 
 function App() {
+  // use the useState hook to manage the value of the input field
+  const [value, setValue] = useState('');
+
+  function handleChange(event) {
+    setValue(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    // set the value of the input field to the value entered by the user
+    setValue(value);
+  }
+
   const [active, setActive] = useState(false);
   const handleClick = () => {
-    setActive(!active);
+    if (value === "Gabriel" ) {
+      setActive(!active);
+    } else {
+      setActive(active)
+    }
   };
-
-  const [fName, setfName] = useState("");
-
   return (
-    <>
-      <form>
+
+
+    <div className="App">
+      <form onSubmit={handleSubmit}>
         <label>
-          <input
-            type="text"
-            value={fName}
-            onChange={(e) => setfName(e.target.value)}
-          />
-          <input type="submit" />
+          Enter a value:
+          <input type="text" value={value} onChange={handleChange} />
         </label>
       </form>
-      <div className="App">
-        <div onClick={handleClick}>
-          {!active ? (
-            <button id="bootBtn" type="button" className="btn btn-primary">
-              {fName} e ratat
-            </button>
-          ) : (
-            <button type="button" className="btn btn-danger">
-              True
-            </button>
-          )}
-        </div>
+
+      <div onClick={handleClick}>
+        {!active ? (
+          <button type="button" className="btn btn-primary">
+            {value} e ratat
+          </button>
+        ) : (
+          <button type="button" className="btn btn-danger">
+            True
+          </button>
+        )}
       </div>
-    </>
+    </div>
   );
 }
+
 
 export default App;
